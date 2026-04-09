@@ -1,5 +1,5 @@
 import pandas as pd
-
+from pathlib import Path 
 from collections import defaultdict
 from sklearn.preprocessing import LabelEncoder
 import joblib
@@ -7,6 +7,7 @@ import joblib
 
 decode_mapping_dict = defaultdict(list)
 
+ENCODER_PATH = Path("encoder/encoder.joblib")
 
 categorical_cols = ["experience_level", "employment_type", "company_size"]
 
@@ -54,7 +55,7 @@ def encode_remote_column(df: pd.DataFrame, remote_col: str = remote_col) -> pd.D
     return df
 
 def decode_remote_column(df: pd.DataFrame, remote_col: str = remote_col) -> pd.DataFrame:
-    df[remote_col] = df[remote_col].map({0: 'No Remote', 1: 'Partially Remote', 2: 'Fully Remote'})
+    df[remote_col] = df[remote_col].replace({0: 0, 1: 50, 2: 100})
     return df
 
 def cast_col_to_categorical(df: pd.DataFrame, col_name: str) -> pd.DataFrame:
@@ -68,7 +69,12 @@ def encode_features(df: pd.DataFrame) -> pd.DataFrame:
     df = encode_remote_column(df, remote_col)
     return df, encoder
 
-def decode_features(df: pd.DataFrame, encoder: LabelEncoder) -> pd.DataFrame:
+def load_encoder(file_path: str = "encoder/country_encoder.joblib") -> LabelEncoder:
+    encoder = joblib.load(file_path)
+  
+    return encoder
+
+def decode_features(df: pd.DataFrame, encoder: LabelEncoder=load_encoder()) -> pd.DataFrame:
     df = decode_diff_categorical_columns(df, categorical_cols)
     df = decode_country_cols(df, encoder)
     df = decode_remote_column(df, remote_col)
@@ -81,10 +87,6 @@ def save_encoder(encoder: LabelEncoder, file_path: str = "encoder/country_encode
     print(f"Encoder saved to {file_path}")
     return file_path
 
-def load_encoder(file_path: str = "encoder/country_encoder.joblib") -> LabelEncoder:
-    encoder = joblib.load(file_path)
-    print(f"Encoder loaded from {file_path}")
-    return encoder
 
 
 

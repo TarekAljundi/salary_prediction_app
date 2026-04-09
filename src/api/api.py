@@ -3,12 +3,16 @@ from pathlib import Path
 import pandas as pd
 
 
+from src.db.save_results import save_prediction
 from src.train_pipe.predict import predict_model
+from src.feature_pipe.processing_data import decode_features
+import joblib
 
 from src.train_pipe.train import load_model
 
 
 MODEL_PATH = Path("model/xgb_model2.joblib")
+
 
 
 # data = pd.DataFrame({
@@ -66,6 +70,23 @@ def predict_salary(
     
     prediction = predict_model(MODEL_PATH, input_df)
 #     print(f"Predicted Salary: {prediction}")
+    input_df["predicted_salary"] = prediction
+    input_df=decode_features(input_df)
+
+    for _, row in input_df.iterrows():
+        save_prediction({
+            "work_year": row["work_year"],
+            "job_title": row["job_title"],
+            "experience_level": row["experience_level"],
+            "employment_type": row["employment_type"],
+            "employee_residence": row["employee_residence"],
+            "company_size": row["company_size"],
+            "remote_ratio": row["remote_ratio"],
+            "predicted_salary": row["predicted_salary"],
+            "analyze": "none",
+            "chart": "none"
+            ,"company_location": row["company_location"]
+        })
 
 #     # Step 5: RETURN AS JSON CORRECTLY
     return {"predicted_salary": float(prediction)}
