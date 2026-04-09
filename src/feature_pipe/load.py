@@ -40,5 +40,17 @@ def split_for_train(train_df,test_df: pd.DataFrame,target_col="salary_in_usd"):
     return X_train, y_train, X_test, y_test
 
 
+def split_for_predict(df,target_col="salary_in_usd"):
+
+    
+    X_pred = df.drop(columns=[target_col])
+    y_pred = df[target_col]
+    return X_pred, y_pred
+
+
+
+
+
+
 
 

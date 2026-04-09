@@ -2,6 +2,7 @@ import pandas as pd
 
 from collections import defaultdict
 from sklearn.preprocessing import LabelEncoder
+import joblib
 
 
 decode_mapping_dict = defaultdict(list)
@@ -72,6 +73,18 @@ def decode_features(df: pd.DataFrame, encoder: LabelEncoder) -> pd.DataFrame:
     df = decode_country_cols(df, encoder)
     df = decode_remote_column(df, remote_col)
     return df
+
+
+def save_encoder(encoder: LabelEncoder, file_path: str = "encoder/country_encoder.joblib"):
+    
+    joblib.dump(encoder, file_path)
+    print(f"Encoder saved to {file_path}")
+    return file_path
+
+def load_encoder(file_path: str = "encoder/country_encoder.joblib") -> LabelEncoder:
+    encoder = joblib.load(file_path)
+    print(f"Encoder loaded from {file_path}")
+    return encoder
 
 
 
