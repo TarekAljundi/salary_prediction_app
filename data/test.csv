@@ -1,0 +1,123 @@
+work_year,experience_level,employment_type,job_title,salary_in_usd,employee_residence,remote_ratio,company_location,company_size
+2022,1,2,Data Engineer,140250,55,2,48,1
+2022,1,2,Data Engineer,135000,55,2,48,1
+2021,2,2,BI Data Analyst,100000,55,2,48,1
+2021,2,3,ML Engineer,270000,55,2,48,2
+2021,2,2,Data Engineer,26005,47,0,48,2
+2022,2,2,Machine Learning Scientist,153000,55,1,48,1
+2020,0,2,Data Scientist,51321,19,0,17,0
+2021,0,2,Data Scientist,49646,19,1,17,1
+2022,2,2,Data Engineer,76940,21,2,19,1
+2021,0,2,Data Analyst,59102,19,1,17,1
+2020,2,2,Data Scientist,62726,19,1,31,0
+2022,1,2,Data Engineer,110500,55,2,48,1
+2022,1,2,Data Engineer,136994,55,2,48,1
+2021,2,2,Machine Learning Engineer,24823,51,1,45,2
+2020,1,2,Principal Data Scientist,148261,14,2,12,1
+2022,1,2,Data Engineer,175000,55,2,48,1
+2020,2,2,Data Engineering Manager,59303,14,2,12,0
+2021,2,2,Data Engineer,112000,55,2,48,2
+2021,0,2,Data Engineer,30428,27,2,25,2
+2022,1,2,Data Analytics Manager,109280,55,2,48,1
+2020,1,2,Big Data Engineer,109024,20,1,18,1
+2021,2,0,Machine Learning Scientist,12000,43,1,39,1
+2022,1,2,Data Engineer,154000,55,2,48,1
+2021,2,2,Data Scientist,160000,55,2,48,2
+2021,2,2,Big Data Engineer,18000,35,0,32,0
+2021,2,2,ML Engineer,77364,32,1,29,0
+2022,1,2,Data Engineer,132320,55,0,48,1
+2021,2,2,Data Scientist,130000,55,1,48,2
+2022,1,2,Data Analyst,69000,55,2,48,1
+2022,2,2,Data Engineer,78526,20,2,18,1
+2021,0,2,Research Scientist,82528,20,1,18,2
+2022,1,2,Data Analyst,112900,55,2,48,1
+2022,1,2,Machine Learning Developer,78791,8,2,6,1
+2022,0,2,Computer Vision Engineer,10000,46,2,31,1
+2021,2,2,Research Scientist,56738,19,1,17,0
+2022,1,2,Data Analyst,150075,55,2,48,1
+2022,2,2,Data Scientist,160000,55,2,48,1
+2022,1,2,Data Analyst,61300,8,2,6,1
+2021,0,2,AI Scientist,18053,27,2,1,0
+2022,1,2,Data Scientist,104702,20,0,18,1
+2022,1,2,Data Scientist,140000,55,2,48,1
+2022,1,2,Data Scientist,140000,55,2,48,1
+2020,1,2,Machine Learning Manager,117104,8,1,6,2
+2022,1,2,Machine Learning Engineer,71444,26,2,23,0
+2022,1,2,Data Analyst,90320,55,2,48,1
+2020,2,2,Lead Data Scientist,115000,0,0,0,2
+2021,2,0,Data Engineer,20000,30,0,48,2
+2021,2,2,Data Engineer,140000,55,2,48,2
+2022,2,2,Machine Learning Engineer,98158,20,0,18,1
+2022,1,2,Data Scientist,215300,55,2,48,2
+2022,1,2,Data Analyst,81666,55,2,48,1
+2021,2,2,Data Scientist,2859,37,0,34,0
+2022,2,2,Data Engineer,99100,55,0,48,1
+2022,1,2,Data Analyst,100000,55,2,48,1
+2022,1,2,Data Engineer,165400,55,2,48,1
+2022,1,2,Data Analyst,115934,55,2,48,1
+2021,1,2,Data Analytics Manager,120000,55,2,48,1
+2021,3,2,Director of Data Science,141846,14,0,12,2
+2021,0,2,Data Scientist,4000,56,0,49,1
+2021,1,2,Machine Learning Engineer,82744,4,1,4,1
+2022,2,2,Machine Learning Scientist,112300,55,2,48,2
+2021,0,2,BI Data Analyst,9272,33,2,30,0
+2021,2,1,3D Computer Vision Researcher,5409,27,1,25,1
+2020,1,2,Data Scientist,412000,55,2,48,2
+2021,1,2,Data Specialist,165000,55,2,48,2
+2022,2,2,Data Engineer,206699,55,0,48,1
+2021,1,2,Machine Learning Engineer,94564,14,1,12,2
+2022,2,2,Data Analyst,65438,20,0,18,1
+2022,1,2,Data Analyst,130000,8,2,6,1
+2021,2,2,Applied Data Scientist,54238,20,1,6,2
+2021,1,2,AI Scientist,55000,18,2,16,2
+2022,2,2,Data Scientist,122346,9,0,7,2
+2020,1,2,Lead Data Scientist,190000,55,2,48,0
+2021,0,2,Data Analyst,90000,55,2,48,0
+2021,1,2,Data Science Engineer,127221,8,1,6,2
+2021,1,2,ML Engineer,256000,55,2,48,0
+2021,1,2,Data Engineer,76833,47,1,18,0
+2021,1,2,Head of Data,102839,51,2,45,2
+2021,2,2,Data Scientist,73000,55,0,48,2
+2021,1,2,Data Scientist,77684,19,1,17,1
+2021,1,2,Data Engineer,150000,55,2,48,2
+2022,0,2,Data Engineer,120000,55,2,48,1
+2021,2,2,Data Analyst,90000,55,2,48,1
+2022,2,2,Data Analyst,32974,21,2,19,1
+2022,3,2,Analytics Engineer,135000,55,2,48,1
+2021,3,2,BI Data Analyst,150000,27,2,48,2
+2020,0,2,Machine Learning Engineer,138000,55,2,48,0
+2022,1,2,Data Engineer,183600,55,2,48,2
+2021,2,2,Data Scientist,109000,55,1,48,2
+2021,1,2,Data Analyst,63831,14,1,12,2
+2021,2,2,Data Scientist,40038,10,2,8,2
+2022,2,1,Data Engineer,54957,14,1,12,2
+2022,2,2,Data Scientist,120000,55,2,48,1
+2020,2,2,Data Engineer,110000,55,2,48,2
+2022,1,2,Data Engineer,181940,55,0,48,1
+2022,0,2,Data Engineer,58035,43,2,12,1
+2021,0,2,Research Scientist,100000,31,0,9,2
+2022,2,2,ETL Developer,54957,21,0,19,1
+2020,2,2,Data Scientist,40481,27,0,25,2
+2022,1,2,Data Engineer,126000,55,2,48,1
+2021,2,2,Machine Learning Engineer,47282,18,2,16,0
+2021,1,2,Marketing Data Analyst,88654,21,2,13,2
+2021,1,2,Data Analytics Manager,120000,55,0,48,2
+2022,3,2,Data Engineer,200000,55,2,48,1
+2022,1,2,Data Analyst,136600,55,2,48,1
+2021,0,2,Data Analyst,80000,55,2,48,1
+2022,1,2,Data Analyst,120600,55,2,48,1
+2022,1,2,Data Architect,266400,55,2,48,1
+2022,1,2,Data Analyst,155000,55,2,48,1
+2021,2,2,Data Scientist,90734,14,1,12,2
+2022,2,2,Data Analyst,39263,20,2,18,1
+2021,2,2,Data Engineer,12103,53,0,46,1
+2021,1,2,Data Engineering Manager,153000,55,2,48,2
+2022,1,2,Data Scientist,176000,55,2,48,1
+2021,0,2,Data Science Consultant,63831,14,1,12,2
+2022,2,2,Data Analyst,32974,18,2,16,1
+2021,2,2,Data Engineer,28016,53,2,46,1
+2021,1,2,Principal Data Analyst,170000,55,2,48,1
+2022,1,2,Data Scientist,138600,55,2,48,1
+2022,2,2,Machine Learning Engineer,120000,55,2,48,0
+2022,1,2,Data Analyst,99050,55,2,48,1
+2021,2,2,Head of Data Science,110000,55,0,48,0

@@ -12,8 +12,7 @@ categorical_cols = ["experience_level", "employment_type", "company_size"]
 
 encode_mapping_dict = {"EN": 0, "SE": 1, "MI": 2, "EX": 3, "FL": 0, "PT": 1, "FT": 2, "CT": 3, "S": 0, "M": 1, "L": 2, "X": 3}
 columns_to_drop = ["Unnamed: 0","salary", "salary_currency"]
-
-country_cols= ["company_location", "employee_residence"]
+country_cols=["employee_residence", "company_location"]
 remote_col = "remote_ratio"
 
 for k, v in encode_mapping_dict.items():
@@ -35,10 +34,13 @@ def decode_diff_categorical_columns(df: pd.DataFrame, categorical_cols: list[str
        df[col]=df[col].map(decode_mapping_dict)
     return df
 
-def encode_country_cols(df: pd.DataFrame, country_cols: list[str] = country_cols) -> pd.DataFrame:
+def encode_country_cols(df: pd.DataFrame) -> pd.DataFrame:
+    all_locations = pd.concat([df["employee_residence"], df["company_location"]])
     encoder = LabelEncoder()
-    for col in country_cols:
-        df[col] = encoder.fit_transform(df[col])
+    
+    encoder.fit(all_locations)
+    df["employee_residence"] = encoder.transform(df["employee_residence"])
+    df["company_location"] = encoder.transform(df["company_location"])
     return df, encoder
 
 def decode_country_cols(df: pd.DataFrame, encoder: LabelEncoder, country_cols: list[str] = country_cols) -> pd.DataFrame:
@@ -67,7 +69,7 @@ def encode_features(df: pd.DataFrame) -> pd.DataFrame:
 
 def decode_features(df: pd.DataFrame, encoder: LabelEncoder) -> pd.DataFrame:
     df = decode_diff_categorical_columns(df, categorical_cols)
-    df = decode_country_cols(df, encoder, country_cols)
+    df = decode_country_cols(df, encoder)
     df = decode_remote_column(df, remote_col)
     return df
 
