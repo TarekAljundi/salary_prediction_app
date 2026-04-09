@@ -63,7 +63,7 @@ def cast_col_to_categorical(df: pd.DataFrame, col_name: str) -> pd.DataFrame:
 def encode_features(df: pd.DataFrame) -> pd.DataFrame:
     df = drop_unwanted_columns(df, columns_to_drop)
     df = encode_diff_categorical_columns(df, categorical_cols)
-    df, encoder = encode_country_cols(df, country_cols)
+    df, encoder = encode_country_cols(df)
     df = encode_remote_column(df, remote_col)
     return df, encoder
 

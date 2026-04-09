@@ -20,11 +20,25 @@ def split_data(df: pd.DataFrame, test_size: float = 0.2, random_state: int = 42,
     
     out_dir = Path(output_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
+    
+    
+    
     train_df.to_csv(out_dir / "train.csv", index=False)
     test_df.to_csv(out_dir / "test.csv", index=False)
+    
+    
     print(f"✅ Data split completed (saved to {out_dir}).")
     print(f"   Train: {train_df.shape}, Test: {test_df.shape}")
     return train_df, test_df
+
+def split_for_train(train_df,test_df: pd.DataFrame,target_col="salary_in_usd"):
+    X_train = train_df.drop(columns=[target_col])
+    y_train= train_df[target_col]
+    
+    X_test = test_df.drop(columns=[target_col])
+    y_test = test_df[target_col]
+    return X_train, y_train, X_test, y_test
+
 
 
 
