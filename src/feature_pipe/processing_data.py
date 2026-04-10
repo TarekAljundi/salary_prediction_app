@@ -7,7 +7,7 @@ import joblib
 
 decode_mapping_dict = defaultdict(list)
 
-ENCODER_PATH = Path("encoder/encoder.joblib")
+ENCODER_PATH = Path("encoder/country_encoder.joblib")
 
 categorical_cols = ["experience_level", "employment_type", "company_size"]
 
@@ -20,6 +20,12 @@ remote_col = "remote_ratio"
 for k, v in encode_mapping_dict.items():
     decode_mapping_dict[v].append(k)
     
+def save_encoder(encoder: LabelEncoder, file_path: str = "encoder/country_encoder.joblib"):
+    
+    joblib.dump(encoder, file_path)
+    print(f"Encoder saved to {file_path}")
+    return file_path
+
 def drop_unwanted_columns(df: pd.DataFrame, columns_to_drop: list[str]=columns_to_drop) -> pd.DataFrame:
     df.drop(columns=columns_to_drop, errors="ignore",inplace=True)
     return df
@@ -35,11 +41,11 @@ def decode_diff_categorical_columns(df: pd.DataFrame, categorical_cols: list[str
     for col in categorical_cols:
         df[col]=df[col].map(decode_mapping_dict)
         if col == "company_size":
-           df[col] = df[col][2]
+           df[col] = df[col].apply(lambda x: x[2] if isinstance(x, list) else x)
         elif col == "employment_type":
-            df[col] = df[col][1]
+            df[col] = df[col].apply(lambda x: x[1] if isinstance(x, list) else x)
         elif col == "experience_level":
-            df[col] = df[col][0]
+            df[col] = df[col].apply(lambda x: x[0] if isinstance(x, list) else x)
     return df
 
 def encode_country_cols(df: pd.DataFrame) -> pd.DataFrame:
@@ -47,13 +53,15 @@ def encode_country_cols(df: pd.DataFrame) -> pd.DataFrame:
     encoder = LabelEncoder()
     
     encoder.fit(all_locations)
+    save_encoder(encoder, ENCODER_PATH)
     df["employee_residence"] = encoder.transform(df["employee_residence"])
     df["company_location"] = encoder.transform(df["company_location"])
+    
     return df, encoder
 
 def decode_country_cols(df: pd.DataFrame, encoder: LabelEncoder, country_cols: list[str] = country_cols) -> pd.DataFrame:
     for col in country_cols:
-        df[col] = df[col].map({i: encoder.inverse_transform([i])[0] for i in df[col].unique()})
+        df[col] = encoder.inverse_transform(df[col])
     return df
 
 def encode_remote_column(df: pd.DataFrame, remote_col: str = remote_col) -> pd.DataFrame:
@@ -87,11 +95,7 @@ def decode_features(df: pd.DataFrame, encoder: LabelEncoder=load_encoder()) -> p
     return df
 
 
-def save_encoder(encoder: LabelEncoder, file_path: str = "encoder/country_encoder.joblib"):
-    
-    joblib.dump(encoder, file_path)
-    print(f"Encoder saved to {file_path}")
-    return file_path
+
 
 
 
