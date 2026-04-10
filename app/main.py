@@ -56,14 +56,38 @@ if not filtered_df.empty:
 # -----------------------------
 # Display charts
 # -----------------------------
-st.subheader("📉 Charts")
-for _, row in filtered_df.iterrows():
-    chart_path = row.get('chart')
-    if chart_path and os.path.exists(chart_path):
-        st.image(chart_path, caption=row['job_title'])
-        break
-    else:
-        st.warning(f"Chart not found: {chart_path}")
+st.subheader("📉 Chart Salary Analysis")
+
+chart_path = Path("charts/salary_analysis.png")
+if chart_path and os.path.exists(chart_path):
+    st.image(chart_path, caption=f" Salary Analysis")
+else:
+    st.warning(f"Chart not found: {chart_path}")  
+
+st.subheader("📉 Chart Target Distribution")
+
+chart_path = Path("charts/target_distribution.png")
+if chart_path and os.path.exists(chart_path):
+    st.image(chart_path, caption=f" Target Distribution")
+else:
+    st.warning(f"Chart not found: {chart_path}")      
+        
+st.subheader("📉 Chart Correlation Heatmap")
+
+chart_path = Path("charts/correlation_heatmap.png")
+if chart_path and os.path.exists(chart_path):
+    st.image(chart_path, caption=f" Correlation Heatmap")
+else:
+    st.warning(f"Chart not found: {chart_path}")
+        
+        
+st.subheader("📉 Chart Residual Distribution(accuracy of the model)")
+
+chart_path = Path("charts/residual_distribution.png")
+if chart_path and os.path.exists(chart_path):
+    st.image(chart_path, caption=f" Residual Distribution")
+else:
+    st.warning(f"Chart not found: {chart_path}")
         
         
         
@@ -74,3 +98,12 @@ if chart_path and os.path.exists(chart_path):
     st.image(chart_path, caption=f" Actual vs Predicted Salary model result")
 else:
     st.warning(f"Chart not found: {chart_path}")
+
+st.subheader("📉 Charts")
+for _, row in filtered_df.iterrows():
+    chart_path = row.get('chart')
+    if chart_path and os.path.exists(chart_path):
+        st.image(chart_path, caption=row['job_title'])
+        break
+    else:
+        st.warning(f"Chart not found: {chart_path}")

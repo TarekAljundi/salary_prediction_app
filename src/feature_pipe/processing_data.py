@@ -33,7 +33,13 @@ def encode_diff_categorical_columns(df: pd.DataFrame, categorical_cols: list[str
 
 def decode_diff_categorical_columns(df: pd.DataFrame, categorical_cols: list[str]=categorical_cols) -> pd.DataFrame:
     for col in categorical_cols:
-       df[col]=df[col].map(decode_mapping_dict)
+        df[col]=df[col].map(decode_mapping_dict)
+        if col == "company_size":
+           df[col] = df[col][2]
+        elif col == "employment_type":
+            df[col] = df[col][1]
+        elif col == "experience_level":
+            df[col] = df[col][0]
     return df
 
 def encode_country_cols(df: pd.DataFrame) -> pd.DataFrame:

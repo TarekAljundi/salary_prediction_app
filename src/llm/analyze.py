@@ -37,7 +37,7 @@ You are a data analyst. Here is the predicted salary dataset:
 
 {text_input}
 
-Please generate a 70 words written analysis of the salary landscape.
+Please generate a 200 words complete written analysis of the salary landscape.
 Highlight which job titles have higher salaries, trends with remote ratio or company size,
 and any other interesting insights. Refer to the chart saved as '{chart_path}'.
 """
@@ -47,7 +47,7 @@ and any other interesting insights. Refer to the chart saved as '{chart_path}'.
         model="llama3",
         messages=[{"role": "user", "content": prompt}],
         options={
-            "num_predict": 100 # limit output tokens (try 100–200)
+            "num_predict": 200 # limit output tokens (try 100–200)
         }
     )
 
