@@ -15,14 +15,6 @@ MODEL_PATH = Path("model/xgb_model2.joblib")
 
 
 
-# data = pd.DataFrame({
-#     "job_title": ["Data Scientist"],
-#     "experience_level": ["Mid"],
-#     "employment_type": ["Full-time"],
-#     "remote_ratio": [100],
-#     "company_size": ["Large"],
-#     "salary_in_usd": [120000]
-# })
 
 
 
@@ -44,7 +36,7 @@ def predict_salary(
     company_size: str
     
     ):
-#     # Step 1: Create DataFrame
+
     input_df = pd.DataFrame([{
     "work_year": work_year,
     "experience_level": experience_level,
@@ -57,16 +49,7 @@ def predict_salary(
 
     }])
 
-#     # Step 2: One-Hot Encode categorical features
-  
 
-#     # Step 3: Align with training columns
-#     # for col in model_features:
-#     #     if col not in input_df.columns:
-#     #     input_df[col] = 0
-#     #     input_df = input_df[model_features]
-
-#     # Step 4: Predict
     
     prediction = predict_model(MODEL_PATH, input_df)
 #     print(f"Predicted Salary: {prediction}")
@@ -88,7 +71,6 @@ def predict_salary(
             ,"company_location": row["company_location"]
         })
 
-#     # Step 5: RETURN AS JSON CORRECTLY
     return {"predicted_salary": float(prediction)}
 
     

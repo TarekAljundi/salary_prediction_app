@@ -13,16 +13,7 @@ from src.train_pipe.train import train_model,save_model
 from src.train_pipe.predict import predict_model
 
 
-# cat_col = "job_title"
 
-# data = load_data()
-
-
-
-# processed_data,encoder=encode_features(data)
-# processed_data = cast_col_to_categorical(processed_data, cat_col)
-
-# save_encoder(encoder)
 
 
 data ={"work_year": 2022, "experience_level": "SE", "employment_type": "FT", "job_title": "Data Scientist", "employee_residence": "US","remote_ratio": 0,'company_location': "US", "company_size": "S"}
@@ -37,17 +28,9 @@ data2={    "work_year": 2022,
     "company_size": "S"}
 
 
-# train_df, test_df = split_data(processed_data)
 
-# X_train, y_train, X_test, y_test = split_for_train(train_df, test_df)
 
-# best_params, best_r2 = study_model(X_train, y_train, X_test, y_test,700)
-
-# r2 , model = train_model(X_train, y_train, X_test, y_test,best_params)
-
-test_df= pd.read_csv("data/ds_salaries.csv")
-# model_path = save_model(model)
-# print(f"R2 Score: {r2}")
+test_df= pd.read_csv("data/test.csv")
 
 df = pd.DataFrame([data2])
 
