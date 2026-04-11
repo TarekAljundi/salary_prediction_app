@@ -9,7 +9,7 @@ from src.llm.analyze import generate_analysis
 
 from src.db.save_results import save_prediction
 
-MODEL_PATH = "model/xgb_model2.joblib"
+MODEL_PATH = "model/xgb_model3.joblib"
 
 
 
