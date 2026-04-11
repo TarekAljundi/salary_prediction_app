@@ -1,6 +1,7 @@
 import pandas as pd
 from pathlib import Path 
 from collections import defaultdict
+
 from sklearn.preprocessing import LabelEncoder
 import joblib
 
@@ -26,7 +27,7 @@ def save_encoder(encoder: LabelEncoder, file_path: str = "encoder/country_encode
     print(f"Encoder saved to {file_path}")
     return file_path
 
-def drop_unwanted_columns(df: pd.DataFrame, columns_to_drop: list[str]=columns_to_drop) -> pd.DataFrame:
+def  drop_unwanted_columns(df: pd.DataFrame, columns_to_drop: list[str]=columns_to_drop) -> pd.DataFrame:
     df.drop(columns=columns_to_drop, errors="ignore",inplace=True)
     return df
 

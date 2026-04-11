@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from ollama import chat # <- use chat function, not Ollama class
+from ollama import chat 
 import os
 from datetime import datetime
 

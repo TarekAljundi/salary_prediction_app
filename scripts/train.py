@@ -17,6 +17,7 @@ cat_col = "job_title"
 data = load_data()
 
 processed_data,encoder=encode_features(data)
+print("Data processing completed.",processed_data.head())
 processed_data = cast_col_to_categorical(processed_data, cat_col)
 
 

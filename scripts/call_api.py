@@ -3,14 +3,14 @@
 # API_URL = "http://127.0.0.1:8000/predict_salary"
 
 # def get_predict_salary(
-#     work_year: int,
-#     experience_level: str,
-#     employment_type: str,
-#     job_title: str,
-#     employee_residence: str,
-#     remote_ratio: float,
-#     company_location: str,
-#     company_size: str
+    # work_year: int,
+    # experience_level: str,
+    # employment_type: str,
+    # job_title: str,
+    # employee_residence: str,
+    # remote_ratio: float,
+    # company_location: str,
+    # company_size: str
     
 #     ):
 
@@ -18,8 +18,8 @@
 #         response = requests.get(API_URL, params=params)
 #         response.raise_for_status()
 #         data = response.json()
-#         if "predicted_salary" in data:
-#             return data["predicted_salary"]
+#         if "prediction" in data:
+#             return data["prediction"]
 #         else:
 #             return f"Error from API: {data}"
 #     except requests.exceptions.RequestException as e:
